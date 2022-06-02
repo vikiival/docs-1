@@ -1,0 +1,6 @@
+site_name: Subsquid
+docs_dir: ./src
+nav:
+  - Quick start: quickstart.md
+theme:
+  name: material
