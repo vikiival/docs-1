@@ -8,5 +8,8 @@ nav:
     - Processor: key-concepts/processor.md
     - Substrate: key-concepts/substrate.md
     - Typegen: key-concepts/typegen.md
+  - Guides:
+    - Migrate to V5: guides/migrate-to-v5.yml
+    - How to Launch a Squid Archive: guides/how-to-launch-a-squid-archive.md
 theme:
   name: material

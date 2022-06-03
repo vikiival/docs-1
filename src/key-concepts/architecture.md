@@ -43,7 +43,7 @@ Ultimately, the Substrate Archive extracts block information, [Events](substrate
 
 An Archive can be shared by multiple Squids, which means it is possible to segment how data is presented, based on the user's needs, without having to replicate the data source.
 
-To launch your own Archive for a particular Blockchain, head over to [our dedicated page](../recipes/how-to-launch-a-squid-archive.md) on the topic.
+To launch your own Archive for a particular Blockchain, head over to [our dedicated page](../guides/how-to-launch-a-squid-archive.md) on the topic.
 
 ### Squid
 
@@ -57,7 +57,7 @@ A Squid replaces direct gRPC node access with more performant API calls to Archi
 
 Thanks to the Subsquid framework, it is possible to:
 
-* define the [database schema](../recipes/running-a-squid/define-a-squid-schema.md), [data type, and entity definitions](../recipes/running-a-squid/generate-typescript-definitions.md)
+* define the [database schema](../guides/running-a-squid/define-a-squid-schema.md), [data type, and entity definitions](../guides/running-a-squid/generate-typescript-definitions.md)
 * transform and store chain data efficiently
 * present it thanks to the included GraphQL server
 

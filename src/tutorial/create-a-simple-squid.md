@@ -127,7 +127,7 @@ npx sqd codegen
 
 ## Generate TypeScript interfaces
 
-The process to generate wrappers around TypeScript wrappers around Events and Extrinsics has a [dedicated page](../key-concepts/typegen.md) to explain it and a quick [Recipe](../recipes/running-a-squid/generate-typescript-definitions.md) to guide you through it, so it is advised to consult them for more information.
+The process to generate wrappers around TypeScript wrappers around Events and Extrinsics has a [dedicated page](../key-concepts/typegen.md) to explain it and a quick [Recipe](../guides/running-a-squid/generate-typescript-definitions.md) to guide you through it, so it is advised to consult them for more information.
 
 ### Chain exploration
 

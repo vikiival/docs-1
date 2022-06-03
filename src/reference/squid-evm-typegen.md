@@ -40,4 +40,4 @@ Which will print out a help.
 npx squid-evm-typegen --abi=src/abi/ERC721.json --output=src/abi/erc721.ts
 ```
 
-For a more in-depth explanation of the subject, head over to the [dedicated page](../key-concepts/typegen.md) and for a practical guide, take a look at the [dedicated Recipe](../recipes/running-a-squid/generate-typescript-definitions.md).&#x20;
+For a more in-depth explanation of the subject, head over to the [dedicated page](../key-concepts/typegen.md) and for a practical guide, take a look at the [dedicated Recipe](../guides/running-a-squid/generate-typescript-definitions.md).&#x20;
