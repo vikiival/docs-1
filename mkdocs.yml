@@ -1,6 +1,12 @@
 site_name: Subsquid
 docs_dir: ./src
 nav:
+  - Home: index.md
   - Quick start: quickstart.md
+  - Key-Concepts: 
+    - Architecture: key-concepts/architecture.md
+    - Processor: key-concepts/processor.md
+    - Substrate: key-concepts/substrate.md
+    - Typegen: key-concepts/typegen.md
 theme:
   name: material
