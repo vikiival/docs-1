@@ -1,9 +1,6 @@
 ---
-description: >-
-  Introducing Subsquid, an on-chain data indexing framework and a platform for
-  serverless Web3 APIs.
-cover: .gitbook/assets/Group 513211222.png
-coverY: 0
+id: overview
+title: Overview
 ---
 
 # Overview
@@ -12,7 +9,7 @@ This documentation provides information for all degrees of expertise, varying fr
 
 ## Quickstart
 
-To jump straight into the action, get a local environment up and running, follow the [Quickstart](quickstart.md) guide and start familiarizing with the SDK.
+To jump straight into the action, get a local environment up and running, follow the [Quickstart](quickstart.mdx) guide and start familiarizing with the SDK.
 
 ## Key Concepts
 
