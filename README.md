@@ -1,43 +1,41 @@
----
-description: >-
-  Introducing Subsquid, an on-chain data indexing framework and a platform for
-  serverless Web3 APIs.
-cover: .gitbook/assets/Group 513211222.png
-coverY: 0
----
+# Website
 
-# Overview
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-This documentation provides information for all degrees of expertise, varying from complete beginner, to those who only need a refresher on specific commands.
+### Installation
 
-## Quickstart
+```
+$ yarn
+```
 
-To jump straight into the action, get a local environment up and running, follow the [Quickstart](quickstart.md) guide and start familiarizing with the SDK.
+### Local Development
 
-## Key Concepts
+```
+$ yarn start
+```
 
-To take a more a more conceptual approach, learn more about the project fundamentals, dive deeper into the modula architecture of Subsquid, head over to the [Key Concepts](key-concepts/architecture.md) section.
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-## Start developing
+### Build
 
-If you are already familiar with the project and want to see an example of how to customize it for your own needs, follow the [Tutorial](tutorial/create-a-simple-squid.md) on how to do this.
+```
+$ yarn build
+```
 
-## Deploy your API
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-Subsquid offers serverless deployments of Squid APIs free of charge.
+### Deployment
 
-In this [Tutorial](tutorial/deploy-your-squid.md) you can find out how that works.
+Using SSH:
 
-## Squid Aquarium
+```
+$ USE_SSH=true yarn deploy
+```
 
-[Aquarium](https://app.subsquid.io/aquarium) is a public gallery of Squid APIs developed by community.
+Not using SSH:
 
-Visit and browse through interesting projects, and publish your own for for cool perks from Subsquid!
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
 
-## Migration from earlier versions
-
-If you have an existing project and need to migrate to the latest Squid version, follow this [Guide](recipes/migrate-to-v5.md).
-
-## Bug bounties and community support
-
-As for help or report any issues to our cozy community [Dev Chat](https://t.me/HydraDevs) on Telegram. Also keep an eye on [Github Issues](https://github.com/subsquid/squid/issues) labeled `$` -- these bounties are up for grabs!
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
