@@ -13,7 +13,16 @@
         line-height: 24px;
         letter-spacing: -0.02em;
     }
+
+    .caption {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: -0.02em;
+    }
 }
+
 
 /**
  * Any CSS included here will be global. The classic template
@@ -86,9 +95,9 @@
 
     --bg-base--default: #18181C;
     --bg-base--subtle: #26282F;
-    --bg-base--mutedDefault: #282A31;
-    --bg-base--mutedBlue: #373A43;
-    --bg-base--indistinguishable: #424551;
+    --bg-base--mutedDefault: #383841;
+    --bg-base--mutedBlue: #29293A;
+    --bg-base--indistinguishable: #1B1B1F;
     --bg-base--contrast: #FAFAFA;
 
     --bg-transparent--blue--02: rgba(58, 148, 254, 0.2);
@@ -161,3 +170,22 @@
     @apply pl-4 ml-12;
 }
 
+.codestep + div {
+    @apply ml-12;
+}
+
+.codestep + div code {
+    @apply p-6;
+}
+
+.buttonGroup_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
+    @apply top-2/4 -translate-y-2/4 !important;
+}
+
+.buttonGroup_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module button {
+    @apply rounded-full bg-bg-base--default text-fg-base--muted border border-border-color-base--default w-8 h-8 !important;
+}
+
+svg {
+    display: initial;
+}

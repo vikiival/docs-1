@@ -118,7 +118,6 @@ Like so:
 
 {% code title="docker-compose.yml" %}
 ```yaml
-version: "3.4"
 services:
   db:
     image: postgres:12

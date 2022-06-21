@@ -1,11 +1,11 @@
-import {CodeStep} from '../components/code-step';
+---
+
+title: Quickstart
 
 ---
-description: >-
-  This quick start is intended for intermediate to advanced developers, already
-  familiar with the technology used. For a more in-depth introduction to
-  Subsquid, head to our tutorial!
----
+
+import {CodeStep} from '../src/components/code-step';
+
 
 # Quickstart
 
@@ -21,48 +21,51 @@ For more information on how to set up the Development Environment, take a look a
 ## Run the template project
 
 <CodeStep number={1}>
-    #### Install dependencies
-
-    ```bash
-    npm ci
-    ```
+    Install dependencies
 </CodeStep>
 
-#### Compile TypeScript files
+```bash
+npm ci
+```
+
+
+<CodeStep number={2}>
+    Compile TypeScript files
+</CodeStep>
 
 ```bash
 npm run build
 ```
 
-#### Launch Postgres database container for your Squid
+<CodeStep number={3}>
+    Launch Postgres database container for your Squid
+</CodeStep>
 
 ```bash
 docker compose up -d
 ```
 
-#### Create the database the Squid is configured to work with
+<CodeStep number={4}> Create the database the Squid is configured to work with </CodeStep>
 
 ```bash
 npx sqd db create
 ```
 
-#### Apply database migrations to the database
+<CodeStep number={5}> Apply database migrations to the database </CodeStep>
 
 ```bash
 npx sqd db migrate
 ```
 
-#### Launch the Processor
-
-This command will block the terminal, fetching chain data transforming and storing it in the target database
+<CodeStep number={6} description="This command will block the terminal, fetching chain data transforming and storing it in the target database">
+    Launch the Processor
+</CodeStep>
 
 ```bash
 node -r dotenv/config lib/processor.js
 ```
 
-#### Start the GraphQL server
-
-In a new terminal window
+<CodeStep number={7} description="In a new terminal window"> Start the GraphQL server </CodeStep>
 
 ```bash
 npx squid-graphql-server
