@@ -51,11 +51,11 @@ npx squid-graphql-server
 
 Bear in mind this is not strictly **necessary**, but it is always useful to check that everything is in order.
 
-{% hint style="info" %}
+:::info
 These commands are supposed to be run the first time, right after cloning the template.
 
 Some, like `npx sqd db create`,  may throw an error, because the database had already been previously created. In this case just run `npx sqd db drop` and run `npx sqd db create` again.
-{% endhint %}
+:::
 
 If you are not interested, you could at least get the Postgres container running with `docker compose up -d`.
 
@@ -83,8 +83,7 @@ Because we said we want to track
 
 We are going to make these changes to our `schema.graphql`:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   id: ID! #Account address
   workReports: [WorkReport] @derivedFrom(field: "account")
@@ -123,7 +122,7 @@ type StorageOrder @entity {
   blockNum: Int!
 }
 ```
-{% endcode %}
+
 
 It's worth noticing that the `Account` entity is almost completely derived and it is there to tie the other three entities together, since Groups are joined by an Account, Storage Orders are placed by an Account and Work Reports, show files added and changed by, you guessed it, an Account!
 
@@ -162,16 +161,15 @@ One peculiar thing about the Crust chain and this example is that, at the moment
 
 This gives us a good opportunity to follow [this mini-guide](../faq/where-do-i-get-a-type-bundle-for-my-chain.md) and create an example, extracting a types bundle from crust's own library, to Subsquid required format.
 
-{% hint style="info" %}
+:::info
 **Update**: the "crust" types bundle has been added to the list of built-ins, but for learning purposes, it's still useful to see how to create and use a types bundle JSON file.
-{% endhint %}
+:::
 
 <details>
 
 <summary>Here is the end result, copy it and paste it into a file named <code>crustTypesBundle.json</code></summary>
 
-{% code title="crustTypesBundle.json" %}
-```json
+```json title="crustTypesBundle.json"
 {
     "types": {},
     "typesAlias": {},
@@ -329,7 +327,7 @@ This gives us a good opportunity to follow [this mini-guide](../faq/where-do-i-g
     ]
   }
 ```
-{% endcode %}
+
 
 </details>
 
@@ -343,8 +341,7 @@ Similar to what's been said in the previous chapter, this requires knowledge of 
 * `JoinGroupSuccess` from the same pallet
 * `FileSuccess` from the market pallet
 
-{% code title="typegen.json" %}
-```json
+```json title="typegen.json"
 {
   "outDir": "src/types",
   "chainVersions": "crustVersions.json",
@@ -357,7 +354,7 @@ Similar to what's been said in the previous chapter, this requires knowledge of 
   "calls": []
 }
 ```
-{% endcode %}
+
 
 And finally, run the command to generate type-safe TypeScript wrappers around the metadata
 
@@ -369,8 +366,7 @@ npx squid-substrate-typegen typegen.json
 
 <summary>The end result is in the <code>src/types/events.ts</code> file (because we only defined Events in our <code>typegen.json</code>) and should look something like this.</summary>
 
-{% code title="events.ts" %}
-```typescript
+```typescript title="events.ts"
 import assert from 'assert'
 import {EventContext, Result} from './support'
 
@@ -449,7 +445,7 @@ export class SworkWorksReportSuccessEvent {
   }
 }
 ```
-{% endcode %}
+
 
 </details>
 
@@ -590,8 +586,7 @@ processor.addEventHandler('swork.WorksReportSuccess', workReportSuccess);
 
 <summary>Here is the end result, in case you missed something</summary>
 
-{% code title="processor.ts" %}
-```typescript
+```typescript title="processor.ts"
 import * as ss58 from "@subsquid/ss58";
 import {
   SubstrateProcessor,
@@ -731,7 +726,7 @@ type EntityConstructor<T> = {
 };
 
 ```
-{% endcode %}
+
 
 </details>
 

@@ -10,8 +10,7 @@ The `@fulltext` annotation can only be applied to `String` Scalar fields and wil
 
 Let's take a look at a very simple schema making use of this:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 " All transfers "
 type Transfer @entity @index(fields: ["block", "extrinsicId"]) {
   from: Bytes! @index
@@ -36,7 +35,7 @@ type Account @entity {
 }
 
 ```
-{% endcode %}
+
 
 There are other annotations, treated in the [related page](annotations-directives.md), what we are interested here is the `comment` field of `Transfer` type, which will automatically generate a new query, with the named specified in the `query` parameter.
 

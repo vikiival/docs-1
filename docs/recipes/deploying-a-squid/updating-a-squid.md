@@ -35,6 +35,6 @@ sqd squid:update SquidSaas@1 --source <github url>#<github branch>
 
 Where the GitHub variables depend on the project itself.
 
-{% hint style="info" %}
+:::info
 In case the release needs a database reset, the `--hardReset` option can be added to the previous command.&#x20;
-{% endhint %}
+:::

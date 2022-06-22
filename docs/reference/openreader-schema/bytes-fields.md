@@ -6,8 +6,7 @@ The last custom Scalar type implemented in OpenReader is the `Bytes` field, whic
 
 A good example of the usage of this field would be the schema used in [this Tutorial](../../tutorial/create-a-simple-squid.md).
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   id: ID! #Account address
   workReports: [WorkReport] @derivedFrom(field: "account")
@@ -47,12 +46,11 @@ type StorageOrder @entity {
 }
 
 ```
-{% endcode %}
+
 
 The `blockHash` field is defined as a `String` scalar, where actually, block hashes are hexadecimal encoded strings and as such, they can be defined as `Bytes`. Let's do this, then:
 
-{% code title="new_schema.graphql" %}
-```graphql
+```graphql title="new_schema.graphql"
 type Account @entity {
   id: ID! #Account address
   workReports: [WorkReport] @derivedFrom(field: "account")
@@ -92,7 +90,7 @@ type StorageOrder @entity {
 }
 
 ```
-{% endcode %}
+
 
 Let's take the `JoinGroup` entity as an example: the above schema will result in the creation of this SQL table:
 

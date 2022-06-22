@@ -6,8 +6,7 @@ The previous section already showed that queries can return not just Scalars, su
 
 Let's take this sample schema, with two entity types, with a one-to-many relationship between them:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
     id: ID!
     wallet: String!
@@ -26,7 +25,6 @@ type HistoricalBalance @entity {
     balance: Int!
 }
 ```
-{% endcode %}
 
 With the functionality offered by cross-relation field queries, we could ask for `Account`s that have at least some `historicalBalance`s  with a `balance`  smaller than a certain threshold:
 
@@ -47,8 +45,7 @@ There is not just one operator, when it comes to cross-relation field queries. F
 
 For anyone with enough knowledge of Boolean algebra, this should be rather intuitive. When using this clause in a query, the results are those where all of the entities linked via the related field satisfy the condition. Let's look at an example:
 
-{% code title="scheama.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 query MyQuery {
   accounts(where: {historicalBalances_every: {balance_lt: "10000000000"}}) {
     id
@@ -56,7 +53,6 @@ query MyQuery {
 }
 
 ```
-{% endcode %}
 
 This query will return all `Account`s where **each and every one** of the `HistoricalBalance` entities related to them have a `balance` smaller than the threshold.
 

@@ -16,8 +16,7 @@ Each one will instantiate a `SubstrateProcessor` class (or any other future kind
 
 Each processor file has to be launched, in order to start treating data. To do so, it is advised to define a script in `package.json` for each of the processor files:
 
-{% code title="package.json" %}
-```json
+```json title="package.json"
 {
     ...
     "scripts": {
@@ -29,6 +28,6 @@ Each processor file has to be launched, in order to start treating data. To do s
     ...
 }
 ```
-{% endcode %}
+
 
 It is advised to use a naming convention that prefixes all these scripts with `proc*` so that these can be compatible with our SaaS solution.

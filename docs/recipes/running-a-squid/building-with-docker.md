@@ -30,9 +30,9 @@ And when visiting the URL `localhost:4000/graphql` in the browser, we should see
 
 ![Accessing the GraphiQL playground of the launched container](</img/.gitbook/assets/container-graphql.png>)
 
-{% hint style="info" %}
+:::info
 The 4000 port has been chosen, because it is explicitly exposed during the building process of the Docker image.
-{% endhint %}
+:::
 
 ### Rules and conventions for a custom build
 

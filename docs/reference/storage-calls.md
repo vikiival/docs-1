@@ -32,9 +32,9 @@ Here's an example of the typegen config:
 
 To generate all available storage calls, simply set `"storage": true`.
 
-{% hint style="info" %}
+:::info
 Note: One can also consult subscan by navigating to the [Runtime section](https://kusama.subscan.io/runtime) and inspecting `Storage Functions` of the pallet of interest.
-{% endhint %}
+:::
 
 Typegen will generate the file `types/storage.ts` with something similar to
 
@@ -74,6 +74,6 @@ processor.addPreHook({ range: { from: 0, to: 0 } }, async (ctx) => {
 });
 ```
 
-{% hint style="info" %}
+:::info
 Note: It's important to understand that `addPreHook` function accept block handler function that must accept a `BlockHandlerContext` argument. It is accepted, however, to instantiate a `SystemAccountStorage` with a `BlockHandlerContext`, like in this example, because `StorageContext` is a subset of such interface and all mandatory fields are respected.
-{% endhint %}
+:::

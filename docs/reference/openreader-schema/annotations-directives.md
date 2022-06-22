@@ -15,8 +15,7 @@ Our spec-compliant GraphQL server implementation called OpenReader allows the de
 
 A sample schema using this would be the following:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type WorkReport @entity {
   id: ID! #event id
   account: Account!
@@ -55,7 +54,7 @@ type Account @entity {
   storageOrders: [StorageOrder] @derivedFrom (field: "account")
 }
 ```
-{% endcode %}
+
 
 All four types defined here will have a corresponding table in the database.
 
@@ -69,8 +68,7 @@ This directive should be attached to a type's field, defining a relation with an
 
 This way, a two-way relationship between the two types is established through that specific field. Let's look at a simple schema:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   "Account address"
   id: ID!
@@ -86,7 +84,7 @@ type HistoricalBalance @entity {
 }
 
 ```
-{% endcode %}
+
 
 This schema defines two entities: `Account` and `HistoricalBalance`. The `historicalBalances` field of `Account` creates a one-to-many relationship between the two Entities.
 
@@ -106,8 +104,7 @@ create table historical_balance (id text primary key, account_id text references
 
 The `@unique` directive is attached to a field and simply enough, means that such a field should be unique for this type. A sample schema using it looks like this:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Issue @entity {
     id: ID!
     payment: IssuePayment @derivedFrom(field: "issue")
@@ -126,7 +123,7 @@ type IssueCancellation @entity {
     height: Int!
 }
 ```
-{% endcode %}
+
 
 This will be reflected in the automatically created tables:
 

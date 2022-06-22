@@ -80,9 +80,9 @@ The above code accomplishes these tasks:
 * Then proceeds in creating a map, named `chainCodecs` that links a chain's name to its related encoding function, using the appropriate codec version.
 * Finally, using `chainCodecs`, it fills the `Account` instance's map with encoded addresses
 
-{% hint style="warning" %}
+{% :::caution="warning" %}
 The only exception to everything explained above are Moonbeam and Moonriver networks, which have Ethereum-formatted Accound addresses, and as such, cannot be directly converted from the "Any network" format.
-{% endhint %}
+:::
 
 ## Generating the query
 
@@ -150,8 +150,7 @@ graphQLClient
 
 <summary>And here is the resulting JSON:</summary>
 
-{% code title="result.json" %}
-```typescript
+```typescript title="result.json"
 {
   "kusama": {
     "accountById": {
@@ -426,7 +425,7 @@ graphQLClient
   }
 }
 ```
-{% endcode %}
+
 
 </details>
 
@@ -438,8 +437,7 @@ This client example is purely for demonstrative purposes, most likely a frontend
 
 <summary>You can look at the complete code example here:</summary>
 
-{% code title="index.tsx" %}
-```typescript
+```typescript title="index.tsx"
 import * as ss58 from "@subsquid/ss58";
 import { request, gql, GraphQLClient } from "graphql-request";
 import * as fs from "fs";
@@ -527,6 +525,6 @@ graphQLClient
     fs.writeFileSync("result.json", JSON.stringify(res, null, 2))
   );
 ```
-{% endcode %}
+
 
 </details>

@@ -65,11 +65,11 @@ query AstarAndKusamaLatestTransfers {
 
 In order to profit from aggregated multi-chain information, a minimum processing is necessary on the client's side, as shown in this section.
 
-{% hint style="danger" %}
+{% :::danger="danger" %}
 Note: It is **very** important to stick to good practices like using `limit` parameter to limit the number of results and using the `*Connection` types to paginate non-limited request.
 
 This is to avoid large queries generating a time-out or clogging the system.
-{% endhint %}
+:::
 
 ## Account Addresses
 

@@ -12,8 +12,7 @@ The relationship is recognized by looking at every field for all entity types. I
 
 A one-to-one relationship between two types is characterized by the low cardinality constraint on both ends of the relationship. It is represented in a GraphQL schema by two types where each one of them has a field that points to each other.
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   "Account address"
   id: ID!
@@ -29,7 +28,7 @@ type User @entity {
 }
 
 ```
-{% endcode %}
+
 
 In this simple example, the `Account` and `User` entities are linked and one `User` can only have one `Account` and one `Account` can only be linked to one `User`. This might not be a real-world scenario, but it is what the schema is defining.
 
@@ -39,8 +38,7 @@ It's worth noticing that the `user` field of `Account` refers back to `User`, bu
 
 A one-to-many relationship between two types has high cardinality on only one side of the relationship. It is represented in the GraphQL schema by two entity types where the source has an array field pointing at the target entity, while the target entity has a simple field pointing back to the source type entity. Let's look at a sample schema we already used in previous pages:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   "Account address"
   id: ID!
@@ -56,7 +54,7 @@ type HistoricalBalance @entity {
 }
 
 ```
-{% endcode %}
+
 
 The above schema defines a `HistoricalBalance` to be tied to one and only one `Account`, while one `Account` can have multiple `HistoricalBalances`.
 
@@ -68,8 +66,7 @@ A many-to-one relationship is essentially mirroring the one-to-many, as they are
 
 This is because the relationship will be established by one side, with a non-array field and since it will remain implicit from the point of view of the target entity type, the cardinality will be considered high by default.
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   "Account address"
   id: ID!
@@ -84,7 +81,7 @@ type HistoricalBalance @entity {
 }
 
 ```
-{% endcode %}
+
 
 ## Many-to-Many
 

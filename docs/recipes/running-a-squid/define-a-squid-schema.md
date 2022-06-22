@@ -18,8 +18,7 @@ As far as what Entities to define and how they are tied to blockchain Events, Ex
 
 In this example, the entities we are interested are `Account` and `HistoricalBalance` which leads to the following schema:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   "Account address"
   id: ID!
@@ -34,7 +33,7 @@ type HistoricalBalance @entity {
   date: DateTime!
 }
 ```
-{% endcode %}
+
 
 It's worth noting that the example explores the Kusama blockchain and it is configured to process the `balance.Transfer` event, so these two entities make perfect sense.
 
@@ -51,18 +50,17 @@ The command will:
 * Read the `schema.graphql` file and parse it
 * Create one model file in `src/model/generated` for each entity encountered
 
-{% hint style="info" %}
+:::info
 It is worth stressing that database migrations have to be executed every time a change is done to the schema, in order for the processor to work correctly).
 
 Migration files are JavaScript files, but should not be modified or executed, the `sqd db migrate` command handles that
-{% endhint %}
+:::
 
 ### Generated models
 
 Here's a look at the generated TypeScript classes:
 
-{% code title="account.model.ts" %}
-```typescript
+```typescript title="account.model.ts"
 import {Entity as Entity_, Column as Column_, PrimaryColumn as PrimaryColumn_, OneToMany as OneToMany_} from "typeorm"
 import * as marshal from "./marshal"
 import {HistoricalBalance} from "./historicalBalance.model"
@@ -86,10 +84,9 @@ export class Account {
   historicalBalances!: HistoricalBalance[]
 }
 ```
-{% endcode %}
 
-{% code title="historicalBalance.model.ts" %}
-```typescript
+
+```typescript title="historicalBalance.model.ts"
 import {Entity as Entity_, Column as Column_, PrimaryColumn as PrimaryColumn_, ManyToOne as ManyToOne_, Index as Index_} from "typeorm"
 import * as marshal from "./marshal"
 import {Account} from "./account.model"
@@ -114,6 +111,6 @@ export class HistoricalBalance {
   date!: Date
 }
 ```
-{% endcode %}
+
 
 As previously mentioned, these classes map to the tables in the database, in a classic [ORM fashion](https://en.wikipedia.org/wiki/Object%E2%80%93relational\_mapping).

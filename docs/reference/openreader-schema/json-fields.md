@@ -4,8 +4,7 @@ Our OpenReader implementation allows the definition of complex objects as fields
 
 Let's take a real world example of a schema (look at [this Tutorial](../../tutorial/create-a-simple-squid.md) to know where it's used):
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   id: ID! #Account address
   workReports: [WorkReport] @derivedFrom(field: "account")
@@ -45,7 +44,7 @@ type StorageOrder @entity {
 }
 
 ```
-{% endcode %}
+
 
 Some fields are repeated throughout the 3 main entities: `extrinsicId`, `createdAt`, `blockHash`, and `blockNum`. This is by no means necessary and some will say it's counterproductive, but for the purpose of this reference, if we were to collapse these fields into one JSON field, we could change the schema this way:
 

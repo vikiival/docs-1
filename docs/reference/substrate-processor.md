@@ -6,9 +6,9 @@ The main explanation and overview for the Processor component of a Squid has bee
 
 The `Substrate Processor` is defined in an `npm` package that needs to be installed before being able to use it:
 
-{% hint style="info" %}
+:::info
 Note: the [subsquid-template](https://github.com/subsquid/squid-template) already has this package in its dependencies
-{% endhint %}
+:::
 
 ```bash
 npm install @subsquid/substrate-processor
@@ -26,9 +26,9 @@ Then, it's finally possible to declare an instance of it:
 const processor = new SubstrateProcessor('kusama_balances')
 ```
 
-{% hint style="info" %}
+:::info
 Note: all of the code snippets in this page can be found in the [`processor.ts`](https://github.com/subsquid/squid-template/blob/main/src/processor.ts) file in the subsquid-template project
-{% endhint %}
+:::
 
 ## Setting data sources
 
@@ -43,8 +43,7 @@ processor.setDataSource({
 
 The argument of the function is an interface defined in the [processor's source](https://github.com/subsquid/squid/blob/master/substrate-processor/src/processor.ts#L34), intuitively called `DataSource`:
 
-{% code title="processor.ts" %}
-```typescript
+```typescript title="processor.ts"
 export interface DataSource {
     /**
      * Archive endpoint URL
@@ -67,7 +66,7 @@ export class SubstrateProcessor {
     }
 }
 ```
-{% endcode %}
+
 
 ## Batch sizes
 
@@ -81,8 +80,7 @@ processor.setBatchSize(500)
 
 Easily enough, the function is defined to accept a number as an argument:
 
-{% code title="processor.ts" %}
-```typescript
+```typescript title="processor.ts"
 export class SubstrateProcessor {
 
     // ...
@@ -93,7 +91,7 @@ export class SubstrateProcessor {
     }
 }
 ```
-{% endcode %}
+
 
 ## Start block/Global execution range
 
@@ -105,8 +103,7 @@ processor.setBlockRange({from: 583000});
 
 The argument of the function is an interface, defined in the [processor's source code](https://github.com/subsquid/squid/blob/master/substrate-processor/src/util/range.ts#L4), and once again intuitively called `Range`.
 
-{% code title="range.ts" %}
-```typescript
+```typescript title="range.ts"
 export interface Range {
     /**
      * Start of segment (inclusive)
@@ -118,12 +115,11 @@ export interface Range {
     to?: number
 }
 ```
-{% endcode %}
+
 
 And used in the function definition.
 
-{% code title="processor.ts" %}
-```typescript
+```typescript title="processor.ts"
 export class SubstrateProcessor {
 
     // ...
@@ -133,7 +129,7 @@ export class SubstrateProcessor {
     }
 }
 ```
-{% endcode %}
+
 
 ## Types Bundle
 
@@ -151,8 +147,7 @@ The function parameter can either be&#x20;
 
 Here is how it's defined in the `SubstrateProcessor` class:
 
-{% code title="processor.ts" %}
-```typescript
+```typescript title="processor.ts"
 export class SubstrateProcessor {
 
     // ...
@@ -166,12 +161,11 @@ export class SubstrateProcessor {
     }
 }
 ```
-{% endcode %}
+
 
 Where the two `getOldTypesBundle` and `readOldTypesBundle`  functions are defined as such:
 
-{% code title="io.ts" %}
-```typescript
+```typescript title="io.ts"
 export function getOldTypesBundle(chain: string): OldTypesBundle | undefined {
     switch(chain) {
         // ...
@@ -202,6 +196,6 @@ export function readOldTypesBundle(file: string): OldTypesBundle {
     return json
 }
 ```
-{% endcode %}
+
 
 Which, respectively, collect a built-in typesBundle from the [available list](https://github.com/subsquid/squid/tree/master/substrate-metadata/src/old/definitions), or process a JSON file, given its path.

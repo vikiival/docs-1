@@ -1,17 +1,16 @@
 # Interfaces
 
-{% hint style="danger" %}
+{% :::danger="danger" %}
 Support for Interfaces has been dropped in v5. They could be introduced if in demand by the community.
 
 Reach out and let the Subsquid team know if and how you would need them.
-{% endhint %}
+:::
 
 Interfaces are a common pattern across type definition systems and object oriented programming languages. An [_Interface_](https://graphql.org/learn/schema/#interfaces) is commonly defined as an abstract type that includes a certain set of fields that a type must include to implement the interface.
 
 To look at an example of Interface, the schema used in [this Tutorial](../../tutorial/create-a-simple-squid.md) can be used:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   id: ID! #Account address
   workReports: [WorkReport] @derivedFrom(field: "account")
@@ -51,7 +50,7 @@ type StorageOrder @entity {
 }
 
 ```
-{% endcode %}
+
 
 As you can see, the `WorkReport`, `JoinGroup`, and `StorageOrder` entities have a few fields in common, namely: `id`,  `extrinisicId`, `createdAt`, `blockHash`, `blockNum`.
 
@@ -59,8 +58,7 @@ To group the common fields we could define an Interface, named `EventInfo`, for 
 
 The schema itself won't change much, it might even look like there's some repetition:
 
-{% code title="interface_schema.graphql" %}
-```graphql
+```graphql title="interface_schema.graphql"
 type Account @entity {
   id: ID! #Account address
   workReports: [WorkReport] @derivedFrom(field: "account")
@@ -108,7 +106,7 @@ type StorageOrder implements EventInfo @entity {
 }
 
 ```
-{% endcode %}
+
 
 What we gained here is that if we were to implement a custom query, for example a simple one: `EventById`, this would be able to return any and all 3 different types, depending on the specified ID. We would have to use a specific syntax to obtain the extra field that are specific to each particular type implementation:
 

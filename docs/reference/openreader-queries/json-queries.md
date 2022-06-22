@@ -8,8 +8,7 @@ The possibility of defining JSON objects as fields of a type in a GraphQL schema
 
 This guide is focusing on how to query such objects and how to fully leverage their potential. Let's take the example of this (non-crypto related, for once😁) schema:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Entity @entity {
     id: ID!
     a: A
@@ -26,7 +25,7 @@ type B {
     e: Entity
 }
 ```
-{% endcode %}
+
 
 It's composed of one entity and two JSON objects definitions, used in a "nested" way.
 

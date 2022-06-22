@@ -54,13 +54,13 @@ Where `typegen.json` config file has the following structure:
 
 A type-safe definition for each and every version of the event will be generated. Most of the time, one should be able to infer a normalized interface together with some glue code to make it fit the runtime-specific versions.
 
-{% hint style="info" %}
+:::info
 **Note**: the Storage prefix is not transformed to `camelCase`, but kept "as is".
-{% endhint %}
+:::
 
-{% hint style="info" %}
+:::info
 **Note**: the Storage prefix is equal to the pallet name in most cases, but it this should not be followed as a rule. You always need to verify the Storage prefix.
-{% endhint %}
+:::
 
 The `typesBundle` key in the `typegen.json` configuration file can either be:
 

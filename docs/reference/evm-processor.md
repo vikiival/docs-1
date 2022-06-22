@@ -18,9 +18,9 @@ To know exactly what this means, please check the related section in the [Archiv
 
 The `Substrate EVM Processor` is defined in an `npm` package that needs to be installed before being able to use it:
 
-{% hint style="info" %}
+:::info
 Note: the [subsquid-template](https://github.com/subsquid/squid-template) does not have this package in its dependencies.
-{% endhint %}
+:::
 
 ```bash
 npm install @subsquid/substrate-evm-processor
@@ -38,9 +38,9 @@ Then, it's finally possible to declare an instance of it:
 const processor = new SubstrateEvmProcessor('moonbeam')
 ```
 
-{% hint style="info" %}
+:::info
 Note: all of the code snippets in this page can be found in the [`processor.ts`](https://github.com/subsquid/squid/blob/master/test/moonsama-erc721/src/processor.ts) file in the test subfolder of our main project's repository.
-{% endhint %}
+:::
 
 ### Handlers and interfaces
 
@@ -64,8 +64,7 @@ As an example, here is the ABI for the ERC-721 standard
 
 <summary>ERC-721 ABI</summary>
 
-{% code title="erc721.json" %}
-```json
+```json title="erc721.json"
 [
   {
     "inputs": [
@@ -489,7 +488,7 @@ As an example, here is the ABI for the ERC-721 standard
   }
 ]
 ```
-{% endcode %}
+
 
 </details>
 
@@ -497,8 +496,7 @@ Defining an ABI (or more) is crucial for being able to process EVM logs, but the
 
 The [Typegen automated tool](../key-concepts/typegen.md), takes care of generating TypeScript class wrappers for abstract types. Unfortunately, there is no equivalent to this for the EVM Events and Topics, so this has to be done manually. Let's look at an example:
 
-{% code title="erc721.ts" %}
-```typescript
+```typescript title="erc721.ts"
 import {Interface} from "@ethersproject/abi"
 import erc721Json from "./erc721.json"
 
@@ -533,14 +531,13 @@ export const events = {
     }
 }
 ```
-{% endcode %}
+
 
 This file uses the official `@ethersproject/abi` to wrap the ABI JSON in an `Interface` class, and then exports an `events` object mapping an event name with its related topic and a function to `decode` the EVM data.
 
 This function can then be used in the body of an `EvmLogHandler` function, like this:
 
-{% code title="processor.ts" %}
-```typescript
+```typescript title="processor.ts"
 async fuction evmTransfer (ctx: EvmLogHandlerContext ): Promise<void> {
     let transfer = erc721.events['Transfer(address,address,uint256)'].decode(ctx)
 
@@ -548,6 +545,6 @@ async fuction evmTransfer (ctx: EvmLogHandlerContext ): Promise<void> {
     
 }
 ```
-{% endcode %}
+
 
 Where `transfer` will be an object with `from`, `to`, `tokenId` fields, as defined above.

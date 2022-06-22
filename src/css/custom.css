@@ -189,3 +189,11 @@
 svg {
     display: initial;
 }
+
+pre {
+    font-family: "PT Mono", monospace;
+}
+
+.language-bash .token-line, .language-bash .function {
+    color: var(--fg-role--accent-01) !important;
+}

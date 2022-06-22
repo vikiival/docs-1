@@ -8,8 +8,7 @@ Typical `Int` fields are 4 bytes (32 bit) signed integers, which are able to rep
 
 A schema defined as such:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   "Account address"
   id: ID!
@@ -25,7 +24,7 @@ type HistoricalBalance @entity {
 }
 
 ```
-{% endcode %}
+
 
 Will result in these tables being created:
 

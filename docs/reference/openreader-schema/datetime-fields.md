@@ -6,8 +6,7 @@ Datetime variables and formats are quite common across various programming langu
 
 We can reuse the basic example of `Account` and `HistoricalBalance` entities to show the usage of this field, because `HistoricalBalance` has a `date` field, which is a `DateTime` Scalar.
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   "Account address"
   id: ID!
@@ -23,7 +22,7 @@ type HistoricalBalance @entity {
 }
 
 ```
-{% endcode %}
+
 
 And this will translate to this table being created for `HistoricalBalance` entity:
 

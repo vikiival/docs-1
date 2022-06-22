@@ -6,8 +6,7 @@ The previous section already showed that queries can return not just Scalars, su
 
 Let's take this sample schema, with two entity types, with a one-to-many relationship between them:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
     id: ID!
     wallet: String!
@@ -26,7 +25,6 @@ type HistoricalBalance @entity {
     balance: Int!
 }
 ```
-{% endcode %}
 
 With the functionality offered by cross-relation field queries, we could ask for `Account`s that have at least some `historicalBalance`s  with a `balance`  smaller than a certain threshold:
 

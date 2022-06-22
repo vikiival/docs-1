@@ -32,9 +32,9 @@ Navigate to the corresponding folder in a command line console window and run
 docker-compose up -d
 ```
 
-{% hint style="info" %}
+:::info
 The -d parameter is advised to avoid locking the console window and being flooded by log messages.
-{% endhint %}
+:::
 
 ![This is what launching an Archive locally should look like](/img/.gitbook/assets/archive-docker-compose-up.png)
 
@@ -54,8 +54,7 @@ Now the last check to perform is visit the console, by typing this URL `http://l
 
 In order for a Squid API to use the Archive we just launched locally, it is necessary to change the values in the `setDataSource` function call, typically in the `processor.ts` file (if the project was not differently customized). The `archive` value should be set to `http://localhost:4010/v1/graphql`:
 
-{% code title="processor.ts" %}
-```typescript
+```typescript title="processor.ts"
 // ...
 
 processor.setDataSource({
@@ -65,7 +64,7 @@ processor.setDataSource({
 
 // ...
 ```
-{% endcode %}
+
 
 ### Running in production environment
 
@@ -116,8 +115,7 @@ To do so, simply follow the procedure above, but make sure to check that the ima
 
 Like so:
 
-{% code title="docker-compose.yml" %}
-```yaml
+```yaml title="docker-compose.yml"
 services:
   db:
     image: postgres:12
@@ -180,4 +178,4 @@ services:
     ports:
       - "6379"
 ```
-{% endcode %}
+

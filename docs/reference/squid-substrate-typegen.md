@@ -14,11 +14,11 @@
 [//]: # (The Squid substrate typegen tool is part of Subsquid SDK and is used for generating TypeScript interface classes for Substrate Events and calls.)
 
 [//]: # ()
-[//]: # ({% hint style="info" %})
+[//]: # (:::info)
 
 [//]: # (Note: in the context of this guide, we assume the [Development Environment has been already set up]&#40;../tutorial/development-environment-set-up.md&#41; and that `npm` is used, although other options are available.)
 
-[//]: # ({% endhint %})
+[//]: # (:::)
 
 [//]: # ()
 [//]: # (To install substrate typegen tool, simply run this in a console.&#x20;)

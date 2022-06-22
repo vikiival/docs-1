@@ -12,8 +12,7 @@ In that context, examples also showed how to query them. What's important to kno
 
 This is where the `__typename` meta filed comes in. To witness it in action, let's take the schema from the [Union types](../openreader-schema/union-types.md) page:
 
-{% code title="schema.graphql" %}
-```graphql
+```graphql title="schema.graphql"
 type Account @entity {
   id: ID! #Account address
   workReports: [WorkReport] @derivedFrom(field: "account")
@@ -55,7 +54,7 @@ type StorageOrder @entity {
 union Event = WorkReport | JoinGroup | StorageOrder
 
 ```
-{% endcode %}
+
 
 This time, if we use this query:
 

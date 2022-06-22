@@ -38,7 +38,6 @@ query {
 
 Example: Fetch a channel using by unique id:
 
-{% code title="" %}
 ```graphql
 query Query1 {
   channelByUniqueInput(where: { id: "1" }) {
@@ -53,7 +52,7 @@ query Query2 {
     handle
   
 ```
-{% endcode %}
+
 
 ### Relation entity queries
 
