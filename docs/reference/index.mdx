@@ -1,0 +1,39 @@
+---
+title: Reference
+---
+
+export const Reference = () => {
+    return (
+        <div className="flex flex-col gap-4">
+            <span className="body--s text-fg-base--default">There are articles in this section:</span>
+            <div className="grid grid-cols-2 gap-4">
+                <a
+                    href="./squid-cli"
+                    className="p-6 text-fg-base--default cursor-pointer rounded-lg bg-bg-base--indistinguishable border border-border-color-base--default">Squid
+                    CLI Reference</a>
+                <a
+                    href="./openreader-schema"
+                    className="p-6 text-fg-base--default cursor-pointer rounded-lg bg-bg-base--indistinguishable border border-border-color-base--default">OpenReader
+                    Schema</a>
+                <a
+                    href="./openreader-queries"
+                    className="p-6 text-fg-base--default cursor-pointer rounded-lg bg-bg-base--indistinguishable border border-border-color-base--default">OpenReader
+                    Queries</a>
+                <a
+                    href="./api-extensions"
+                    className="p-6 text-fg-base--default cursor-pointer rounded-lg bg-bg-base--indistinguishable border border-border-color-base--default">API
+                    Extensions</a>
+                <a
+                    href="./substrate-processor"
+                    className="p-6 text-fg-base--default cursor-pointer rounded-lg bg-bg-base--indistinguishable border border-border-color-base--default">Substrate
+                    Processor</a>
+                <a
+                    href="./evm-processor"
+                    className="p-6 text-fg-base--default cursor-pointer rounded-lg bg-bg-base--indistinguishable border border-border-color-base--default">EVM
+                    Processor</a>
+            </div>
+        </div>
+    );
+}
+
+<Reference/>

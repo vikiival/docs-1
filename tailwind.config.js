@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./src/**/*.{js,jsx,ts,tsx,mdx}"],
+    content: ["./src/**/*.{js,jsx,ts,tsx}", "./docs/**/*.mdx"],
     theme: {
         colors: {
             'fg-base--default': 'var(--fg-base--default)',

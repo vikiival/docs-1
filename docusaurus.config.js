@@ -65,12 +65,7 @@ const config = {
                     alt: 'My Site Logo',
                     src: 'img/logo.svg',
                 },
-                items: [
-                    {
-                        type: 'search',
-                        position: 'right',
-                    }
-                ],
+                items: [],
             },
             footer: {},
             prism: {
