@@ -34,6 +34,13 @@ const config = {
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
                 docs: {
+                    lastVersion: 'current',
+                    versions: {
+                        current: {
+                            label: 'v5',
+                            path: '/'
+                        }
+                    },
                     sidebarPath: require.resolve('./sidebars.js'),
                 },
                 blog: {
@@ -58,7 +65,12 @@ const config = {
                     alt: 'My Site Logo',
                     src: 'img/logo.svg',
                 },
-                items: [],
+                items: [
+                    {
+                        type: 'search',
+                        position: 'right',
+                    }
+                ],
             },
             footer: {},
             prism: {
@@ -85,46 +97,6 @@ const config = {
                 },
             };
         },
-
-        // function loaders(context, options) {
-        //   /** @type {import('@docusaurus/types').Plugin} */
-        //   return {
-        //     name: 'loaders',
-        //     configureWebpack: (config, isServer) => {
-        //       console.log(JSON.stringify(config.resolve.fallback))
-        //       return {
-        //         ...config,
-        //         resolve: {
-        //           ...config.resolve,
-        //           fallback: { "path": false, "buffer": false, "assert": false, "fs": false, ...config.resolve.fallback }
-        //         }
-        //       };
-        //     },
-        //   };
-        // },
-
-        // function customPlugin(context, options) {
-        //     return {
-        //         name: 'custom-docusaurus-plugin',
-        //         // eslint-disable-next-line
-        //         configureWebpack(config, isServer, utils) {
-        //             console.log('isServer: ', isServer);
-        //             console.log('process.env: ', process.env);
-        //             return {
-        //                 resolve: {
-        //                     alias: {
-        //                         path: require.resolve('path-browserify'),
-        //                     },
-        //                     fallback: {
-        //                         fs: false,
-        //                         assert: false,
-        //                         buffer: false
-        //                     },
-        //                 },
-        //             };
-        //         },
-        //     };
-        // }
     ]
 };
 

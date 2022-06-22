@@ -11,7 +11,6 @@ export const CodeStep: React.FunctionComponent = (props: CodeStepProps) => {
   // @ts-ignore
   const markdownValue = props.children.props?.originalType === 'pre' ? props.children.props.children.props.children : props.children;
   // console.log('markdownValue: ', markdownValue);
-  console.log('MDXProvider: ', MDXProvider);
   // console.log('props.children.props.children.props.children: ', props.children.props.children.props.children);
   return (<div className="flex gap-4 body--s mb-2 codestep">
     <div className="w-8 h-8 rounded-full bg-bg-base--subtle flex font-medium text-fg-base--default">
