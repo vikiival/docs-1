@@ -57,13 +57,13 @@ A Squid replaces direct gRPC node access with more performant API calls to Archi
 
 Thanks to the Subsquid framework, it is possible to:
 
-* define the [database schema](define-a-squid-schema.md), [data type, and entity definitions](substrate-support/generate-typescript-definitions.md)
+* define the [database schema](define-a-squid-schema.md), [data type, and entity definitions](broken-reference)
 * transform and store chain data efficiently
 * present it thanks to the included GraphQL server
 
 Subsquid provides developers with a high-level GraphQL-like schema and codegen tools to model blockchain data with Entities. One of the advantages, here, is the removal of boilerplate code to unbox. A more significant advantage is certainly the elimination of incorrect data types due to wrong decoding and missing parameters.
 
-Even more importantly, when handling unstructured data from events, the data format may change from one block to the next, due to runtime upgrades. Without type safety and automation guaranteed by [typegen](typegen.md), managing these alterations would be a nightmare.
+Even more importantly, when handling unstructured data from events, the data format may change from one block to the next, due to runtime upgrades. Without type safety and automation guaranteed by [typegen](substrate-support/typegen/), managing these alterations would be a nightmare.
 
 The Processor extracts data from an Archive Endpoint and does Transform-Load operations, saving it to the database. The transform-load logic is fully custom and defined by the developer.
 

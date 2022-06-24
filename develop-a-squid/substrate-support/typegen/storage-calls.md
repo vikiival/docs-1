@@ -8,7 +8,7 @@ Typegen generates wrappers for fully type-safe storage calls which cover all his
 
 To enable storage calls:
 
-* List fully qualified names of the storage items to the `storage` section of [typegen config](typegen.md)
+* List fully qualified names of the storage items to the `storage` section of [typegen config](./)
 * Rerun typegen
 
 Here's an example of the typegen config:

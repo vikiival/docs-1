@@ -137,7 +137,7 @@ This will automatically generate TypeScript Entity classes for our schema defini
 
 ## Generate TypeScript interfaces
 
-The process to generate wrappers around TypeScript wrappers around Events and Extrinsics has a [dedicated page](../develop-a-squid/typegen.md) to explain it and a quick [Recipe](../develop-a-squid/substrate-support/generate-typescript-definitions.md) to guide you through it, so it is advised to consult them for more information.
+The process to generate wrappers around TypeScript wrappers around Events and Extrinsics has a [dedicated page](../develop-a-squid/substrate-support/typegen/) to explain it and a quick [Recipe](broken-reference) to guide you through it, so it is advised to consult them for more information.
 
 ### Chain exploration
 

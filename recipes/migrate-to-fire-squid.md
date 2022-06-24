@@ -205,6 +205,6 @@ To make sure everything is in order, it is advisable to proceed as follow when m
 
 1. Delete your chain version JSON files (i.e. `kusamaVersion.json`)
 2. Make sure you have update the packages to the latest version (see [here](migrate-to-fire-squid.md#package-update))
-3. Launch the metadata explorer command (see [here](../develop-a-squid/typegen.md#blockchain-metadata), or skip it and add the Archive URL in `typegen.json`)
+3. Launch the metadata explorer command (see [here](../develop-a-squid/substrate-support/typegen/#blockchain-metadata), or skip it and add the Archive URL in `typegen.json`)
 4. Change the `typegen.json` configuration file as specified above
-5. Launch the Typegen command to generate new interfaces (see [here](../develop-a-squid/typegen.md#typescript-class-wrappers))
+5. Launch the Typegen command to generate new interfaces (see [here](../develop-a-squid/substrate-support/typegen/#typescript-class-wrappers))

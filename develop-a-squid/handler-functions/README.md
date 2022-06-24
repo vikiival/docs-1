@@ -11,6 +11,6 @@ This section of the Reference documentation will provide information on:
 * [How to define and attach a `Handler` function](handler-interfaces.md)
 * [How to set a Range filter on a `Handler` function](handler-options-interfaces.md)
 * [What kind of data is passed to a `Handler` function](context-interfaces.md)
-* [How the Subsquid SDK can help you deal with Runtime upgrades](../substrate-support/runtime-upgrades.md)
+* [How the Subsquid SDK can help you deal with Runtime upgrades](broken-reference)
 * Caveats when working with proxied calls (util.batch and sudo extrinsics) – TBD in v5.1&#x20;
 * Logging and debugging best practices

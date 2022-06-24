@@ -12,7 +12,7 @@ In the [Architecture](architecture.md) explanation, the relationship between the
 
 The [Substrate](substrate.md) section explained what decoded data is, what it consists of, and what information it brings.
 
-Next, the [Typegen](typegen.md) section explained how automated tools provide a way to conveniently wrap these entities with TypeScript objects.
+Next, the [Typegen](substrate-support/typegen/) section explained how automated tools provide a way to conveniently wrap these entities with TypeScript objects.
 
 The real Squid developer experience starts with defining one's own data schema, modeling Entities that you want to keep tabs on, and tracking how on-chain information affects them.
 
@@ -36,13 +36,10 @@ import {EventHandlerContext, Store, SubstrateProcessor} from "@subsquid/substrat
 import {Account, HistoricalBalance} from "./model"
 import {BalancesTransferEvent} from "./types/events"
 
-
 const processor = new SubstrateProcessor('kusama_balances')
-
 
 processor.setTypesBundle('kusama')
 processor.setBatchSize(500)
-
 
 processor.setDataSource({
     archive: 'https://kusama.indexer.gc.subsquid.io/v4/graphql',
@@ -125,4 +122,4 @@ The business logic itself is not relevant for the scope of this page, what's wor
     await ctx.store.save(fromAcc)
 ```
 
-The logic in the `getTransferEvent` and how it is tied to the `BalancesTransferEvent` wrapper for an event has been described in [the previous section](typegen.md) but has been reported here because the added context might further clarify it.
+The logic in the `getTransferEvent` and how it is tied to the `BalancesTransferEvent` wrapper for an event has been described in [the previous section](substrate-support/typegen/) but has been reported here because the added context might further clarify it.

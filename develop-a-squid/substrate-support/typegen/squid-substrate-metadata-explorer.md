@@ -11,7 +11,7 @@ The Squid substrate metadata explorer tool is part of Subsquid SDK and is used f
 This is useful for monitoring Runtime updates for a chain and how Events and Extrinsics definitions might have changed, consequently. The result of blockchain exploration is saved in a JSON file.
 
 {% hint style="info" %}
-Note: in the context of this guide, we assume the [Development Environment has been already set up](../../tutorial/development-environment-set-up.md) and that `npm` is used, although other options are available.
+Note: in the context of this guide, we assume the [Development Environment has been already set up](../../../tutorial/development-environment-set-up.md) and that `npm` is used, although other options are available.
 {% endhint %}
 
 To install substrate metadata explorer tool, simply run this in a console.&#x20;
@@ -56,6 +56,21 @@ Options:
   -h, --help       display help for command
 ```
 
+## Chain exploration example
+
+Here's an example to explore Kusama blockchain:
+
+```bash
+npx squid-substrate-metadata-explorer \
+  --chain wss://kusama-rpc.polkadot.io \
+  --archive https://kusama.indexer.gc.subsquid.io/v4/graphql \
+  --out kusamaVersions.json
+```
+
+In the above command, the `--archive` parameter is optional, but it speeds up the process significantly. The exploration of the Kusama network from scratch, without an archive, it may take up to 30 minutes.
+
+You can pass the result of any previous exploration to the `--out` parameter. In that case, exploration will start from the last known block and thus will take much less time.
+
 ### Options for `squid-substrate-metadata-explorer` command
 
 | Argument          | Description                                                  | Required |
@@ -89,5 +104,3 @@ This is a brief description of the various fields:
 | `blockNumber` | number of the starting block of current spec   |
 | `blockHash`   | hash of the starting block of the current spec |
 | `metadata`    | encoded metadata of the given spec             |
-
-For a more in-depth explanation of the subject, head over to the [dedicated page](../typegen.md) and for a practical guide, take a look at the [dedicated Recipe](generate-typescript-definitions.md).&#x20;

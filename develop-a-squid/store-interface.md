@@ -28,6 +28,10 @@ export interface EventHandlerContext {
 
 So when defining an Event Handler, it's possible to use all the functions exposed by the interface. Here is a summary of the most important ones:
 
+## Multiple database support
+
+## Lazy transactions
+
 ## Finding objects
 
 The `Store` interface exposes various methods for finding objects, here's a few, defined directly as part of `EntityManager` parent interface:

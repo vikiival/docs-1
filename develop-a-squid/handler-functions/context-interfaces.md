@@ -78,7 +78,7 @@ function getTransferEvent(ctx: EventHandlerContext): TransferEvent {
 }
 ```
 
-Where the `BalancesTransferEvent` is a type-safe wrapper class, automatically generated, thanks to the [`typegen` tool](../typegen.md) provided by the SDK.
+Where the `BalancesTransferEvent` is a type-safe wrapper class, automatically generated, thanks to the [`typegen` tool](../substrate-support/typegen/) provided by the SDK.
 
 ## `ExtrinsicHandlerContext`
 
