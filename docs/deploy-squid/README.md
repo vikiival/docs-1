@@ -11,7 +11,7 @@ This section goes through deploying a squid to [Aquarium](https://app.subsquid.i
 ## 0. Prerequisites
 
 Make sure you have the `subsquid` packages updated, as in the [squid-template repo](https://github.com/subsquid/squid-template).
-All the scripts below are assumed to be run from the root folder of your squid.
+Further, ensure that the squid structure follows [the convention for Docker runs](/run-squid/run-in-docker). All the scripts below are assumed to be run from the root folder of your squid. 
 
 ## 1. Obtain an Aquarium deployment key
 
