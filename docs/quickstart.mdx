@@ -9,7 +9,9 @@ import {CodeStep} from '../src/components/code-step';
 
 # Quickstart
 
+This quickstart guide presents a simplified method for development environment setup and for running a squid that queries Kusama. 
 
+The steps outlined in this guide should only take around five minutes.
 ## Pre-requisites
 
 Before getting to work on your very first squid, verify that you have installed the following software: 
@@ -51,9 +53,9 @@ make up
 
 ## Step 5: Create the database schema and run the processor
 
- This squid processor ingests pre-indexed on-chain data from a Kusama Archive and transforms it as
- defined by the data handler in `processor.ts`.
- This command is blocking.
+ The squid we have just built ingests pre-indexed on-chain data from a Kusama Archive. This data is then transformed, as defined by the data handler in `processor.ts`.
+ 
+ This command will keep the console busy until manually terminated:
 
 ```bash
 make process
@@ -82,6 +84,6 @@ query MyQuery {
 
 ### What's next?
 
-- [Define your own data schema](/develop-a-squid/define-a-squid-schema)
-- [Define your own data handlers](/develop-a-squid/squid-processor)
-- [Deploy the squid](/deploy-squid)
+- [Define a data schema](/develop-a-squid/define-a-squid-schema)
+- [Define data handlers](/develop-a-squid/squid-processor)
+- [Deploy a squid](/deploy-squid)
