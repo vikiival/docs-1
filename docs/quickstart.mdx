@@ -12,45 +12,46 @@ import {CodeStep} from '../src/components/code-step';
 
 ## Pre-requisites
 
-- node 16.x
-- docker
-- npm (the template is not compatible with `yarn`)
-- [make](https://www.gnu.org/software/make/)
+Before getting to work on your very first squid, verify that you have installed the following software: 
 
-On Windows we recommend using [WSL](https://docs.microsoft.com/en-us/windows/wsl/).
+- Node v16.x
+- Docker 
+- npm (the squid template is not compatible with `yarn`)
+- [GNU Make](https://www.gnu.org/software/make/)
 
-For more information on how to set up the Development Environment, take a look at the [Tutorial on this topic](/tutorials/development-environment-set-up)
+We recommend that Windows users install [WSL](https://docs.microsoft.com/en-us/windows/wsl/).
 
+Additional information about dev environment set is available [here](/tutorials/development-environment-set-up).
 
-## Clone <span><a href="https://github.com/subsquid/squid-template">squid-template</a></span>
+## Step 1: Clone <span><a href="https://github.com/subsquid/squid-template">squid-template</a></span>
 
 ```bash
 git clone https://github.com/subsquid/squid-template.git
 cd squid-template
 ```
 
-##  Install dependencies
+##  Step 2: Install dependencies
 
 ```bash
 npm ci
 ```
 
-## Build the squid
+## Step 3: Build the squid
 
 ```bash
 make build
 ```
 
-##  Launch Postgres and detach
+## Step 4: Launch Postgres and detach
 
 ```bash
 make up
 ```
 
 
-## Create the database schema and run the processor
+## Step 5: Create the database schema and run the processor
 
- The squid processor ingests pre-indexed on-chain data from Kusama archive and transforms it as
+ This squid processor ingests pre-indexed on-chain data from a Kusama Archive and transforms it as
  defined by the data handler in `processor.ts`.
  This command is blocking.
 
@@ -60,16 +61,16 @@ make process
 
 
 
-##  Start the GraphQL server
+## Step 6: Start the GraphQL server
 
-Run in a separate terminal window
+This should be run in a separate terminal window:
 
 ```bash
 make serve
 ```
 
-The GraphQL playground is available on `http://localhost:4350/graphql`. Open it in a browser and run
-sample queries by choosing the filters and data selection on the left-hand pane.
+The GraphQL playground is available at `http://localhost:4350/graphql`. Open it in a browser and run
+sample queries by applying filters and data selections in the panel to the left.
 
 ```graphql
 query MyQuery {
